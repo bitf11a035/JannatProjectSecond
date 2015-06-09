@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>CTS</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="~/Content/default.css">
+	<link rel="stylesheet" href="~/Content/layout.css">
+   <link rel="stylesheet" href="~/Content/media-queries.css">
+   <link rel="stylesheet" href="~/Content/animate.css">
+   <link rel="stylesheet" href="~/Content/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/search.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="~/Scripts/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" />
+    <style>
+        #1 {
+             width: 200px;
+            float: left;
+            margin-left: 20px;
+            margin-right: 20px;
+        background-color:red;
+        }
+        hr {
+            color: black;
+background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+   <div id="preloader">      
+      <div id="status">
+        @* <img src="~/images/preloader.gif" height="64" width="64" alt="">*@
+      </div>
+   </div>
+
+   <!-- Header
+   ================================================== -->
+   <header>
+
+      @*<div class="logo">
+         <a class="smoothscroll" href="#hero"><img alt="" src="~/images/logo.png"></a>
+      </div>*@
+
+      <nav id="nav-wrap">         
+         
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>         
+        
+         <ul id="nav" class="nav">
+             <li><img alt="" src="~/images/White_on_black_background_192x75.png" alt="" width="200" height="50"></li>
+           <li> <div class="HeadersearchBox"><input type="text" value="Search..." class="searchTextBox" id="search" /></div></li>
+             <li> <img src="~/images/download.jpg" alt="" height="50" width="50"/></li>
+             <li>@Html.ActionLink("Samreen", "ViewProfile","User_Panel" ) </li>
+            <li>@Html.ActionLink("Home", "Index","User_Panel" )</li>
+             <li>@Html.ActionLink("Complaints", "ComplaintsUser","User_Panel" )></li>
+	         <li>@Html.ActionLink("Search Complaints", "Index","User_Panel" )></li>
+            <li>@Html.ActionLink("About", "Index","Home/Index" )</li>
+   
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <ul class="header-social">
+         @*<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>*@
+                 <nav id="nav-wrap">
+	<ul id="nav" class="nav">
+	
+		<li><a href="#"><i class="fa fa-cog"></i></a>
+			<ul>
+				<li><a href="/User_Panel/ViewProfile">View_profile</a></li>
+				
+				
+						<li><a href="~/User_Panel/UpdateProfile">Update_profile</a></li>
+					
+                <li><a href="#">Delete_profile</a>
+                    <li><a href="#">Logout</a>
+			</ul>
+		</li>
+	
+	</ul>
+</nav>
+      </ul>
+                       
+
+   </header> <!-- Header End -->
+
+    <!-- Features Section
+   ================================================== -->
+   <section id='features1'>
+  
+
+      <div class="row feature video">
+
+         <div class="six columns center">
+            <h1 >Delete My Accunt</h1>
+             <hr />
+            <p>If you do not think you will use Facebook again and would like your account deleted, we can take care of this for you. Keep in mind that you will not be able to reactivate your account or retrieve any of the content or information you have added. 
+
+If you would still like your account deleted, click "Delete My Account".</p>
+             <hr />
+             <div  style="text-align:center;padding:20px; background-color:#fff" ><button id="butt"> Delete Accunt </button>     <button id="butt"> Cancel </button></div>
+         </div>
+
+        
+
+      </div>
+
+   </section> <!-- Homepage Hero end -->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="~/Scripts/jquery.flexslider.js"></script>
+   <script src="~/Scripts/waypoints.js"></script>
+   <script src="~/Scripts/jquery.fittext.js"></script>
+   <script src="~/Scripts/jquery.fitvids.js"></script>
+   <script src="~/Scripts/imagelightbox.js"></script>
+   <script src="~/Scripts/jquery.prettyPhoto.js"></script>   
+   <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>

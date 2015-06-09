@@ -1,0 +1,542 @@
+﻿@{
+    IEnumerable<complaint_traking_system.Models.Complaint> complaints = ViewData["Complaints"] as IEnumerable<complaint_traking_system.Models.Complaint>;
+   
+  }
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>CTS</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="~/Content/default.css">
+	<link rel="stylesheet" href="~/Content/layout.css">
+   <link rel="stylesheet" href="~/Content/media-queries.css">
+   <link rel="stylesheet" href="~/Content/animate.css">
+   <link rel="stylesheet" href="~/Content/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/a.css">
+     <link rel="stylesheet" href="~/Content/bjqs.css">
+      <link rel="stylesheet" href="~/Content/demo1.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="~/Scripts/modernizr.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/bjqs-1.3.min.js"></script>
+    <script type="text/javascript">
+        function checkLogin() {
+            var name = document.getElementById('e').value;
+            var password = document.getElementById('p').value;
+            if (name.length == 0) {
+                $('#p1').append('*Name fied is empty.');
+                return false;
+            }
+            else if (password.length == 0) {
+                $('#p1').append('*Password field is empty.');
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+            </script> 
+    
+
+     <script type="text/javascript">
+         function check() {
+             var name = document.getElementById('n').value;
+             var email = document.getElementById('em').value;
+             var semail = document.getElementById('em1').value;
+             var ph = document.getElementById('ph1').value;
+             var password = document.getElementById('pp').value;
+             var newPassword = document.getElementById('pp1').value;
+             if (name.length == 0) {
+                 $('#p1').append('*Name field is empty.');
+                 return false;
+             }
+             else if (email.length == 0) {
+                 $('#p1').append('*Email field is empty.');
+                 return false;
+             }
+
+             else if (semail.length == 0) {
+                 $('#p1').append('*Secondary email field is empty.');
+                 return false;
+             }
+             else if (password.length == 0) {
+                 $('#p1').append('*Password field is empty.');
+                 return false;
+             }
+             else if (newPassword.length == 0) {
+                 $('#p1').append('*Re-enter Password field is empty.');
+                 return false;
+             }
+             else if (ph.length == 0) {
+                 $('#p1').append('*Phone field is empty.');
+                 return false;
+             }
+             else if (password != newPassword) {
+                 $('#p1').append('*Password does not match!');
+                 return false;
+             }
+             else {
+                 return true;
+             }
+         }
+            </script>
+
+    <script type="text/javascript">
+        function checkDep() {
+            var name = document.getElementById('dn').value;
+            var email = document.getElementById('de').value;
+            var semail = document.getElementById('de1').value;
+            var ph = document.getElementById('dp').value;
+            var place = document.getElementById('dp1').value;
+            var city = document.getElementById('dc').value;
+
+            if (name.length == 0) {
+                $('#p1').append('*Name field is empty.');
+                return false;
+            }
+            else if (email.length == 0) {
+                $('#p1').append('*Email field is empty.');
+                return false;
+            }
+
+            else if (semail.length == 0) {
+                $('#p1').append('*Secondary email field is empty.');
+                return false;
+            }
+            else if (place.length == 0) {
+                $('#p1').append('*Place field is empty.');
+                return false;
+            }
+
+            else if (ph.length == 0) {
+                $('#p1').append('*Phone field is empty.');
+                return false;
+            }
+
+            else if (city.length == 0) {
+                $('#p1').append('*City field is empty.');
+                return false;
+            }
+
+
+            else {
+                return true;
+            }
+        }
+            </script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header>
+
+      <nav id="nav-wrap">         
+         
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>         
+
+         <ul id="nav" class="nav">
+               <li><img alt="" src="~/images/White_on_black_background_192x75.png" alt="" width="200" height="50"></li>
+            <li><a class="smoothscroll" href="#login">Login</a></li>
+	         <li><a class="smoothscroll" href="#signup">Sign Up</a></li>
+            <li><a class="smoothscroll" href="#screenshots">Register Department</a></li>
+             <li><a class="smoothscroll" href="#comp">View Complaints</a></li>
+            <li><a class="smoothscroll" href="#testimonials">About</a></li>
+            <li><a class="smoothscroll" href="#subscribe">Contact</a></li>
+        
+            
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+   </header> <!-- Header End -->
+<div id="container">
+      <div id="banner-fade">
+
+        <!-- start Basic Jquery Slider -->
+        <ul class="bjqs">
+          <li><img src="~/images/banner01.jpg" height="500" width="1350"></li>
+          <li><img src="~/images/banner02.jpg" height="500" width="1350"></li>
+          <li><img src="~/images/banner03.jpg" height="500" width="1350"></li>
+        </ul>
+        <!-- end Basic jQuery Slider -->
+
+      </div>
+      <!-- End outer wrapper -->
+
+      <script class="secret-source">
+          jQuery(document).ready(function ($) {
+
+              $('#banner-fade').bjqs({
+                  height: 500,
+                  width: 1350,
+
+              });
+
+          });
+      </script>
+
+
+    </div>
+
+    <!-- 
+      The following script is not related to basic jQuery Slider 
+      It's used to create the code snippets in the demo.
+      https://github.com/maelstrom/SecretSource
+    -->
+    <script src="~/Scripts/libs/jquery.secret-source.min.js"></script>
+
+    <script>
+        jQuery(function ($) {
+
+            $('.secret-source').secretSource({
+                includeTag: false
+            });
+
+        });
+    </script>
+
+
+   <!-- Features Section
+   ================================================== -->
+   <section id='login'>
+ 
+       @using (Html.BeginForm("check", "Home", FormMethod.Post))
+       {
+               
+                <table style="margin-left:800px">
+
+		            <tr><td>Email<input type="text" name="email" id="e"/></td></tr>
+                   
+                     <tr><td>Password<input type="password" name="password" id="p"/></td></tr>
+                    <tr></tr>
+                    <tr><td><input type="checkbox" name="logged" id="check"> keep me logged in</td></tr>
+                    <tr></tr>
+                    <tr><td><a href="~/Home/ForgetPassword">   Forget your password? </a></td></tr>
+                   <tr></tr>
+                    <tr><td><input type="submit" value="Log in" /></td></tr>
+                </table>
+          
+        }
+        
+     
+
+
+   </section> <!-- Homepage Hero end -->
+         
+     <section id='signup'>
+        <div class="row section-head">
+
+         <h1>SignUp</h1>
+          <h6>It's free and always will be. </h6>
+      </div>
+      
+        @using (Html.BeginForm("add", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+       {
+        
+           <div style="margin-left:750px">
+                <table style="width:auto" border="0">
+               
+                    <tr><td>Name<input type="text" name="name" id="n"></td></tr>
+		            <tr><td>Email<input type="text" name="email" id="em" ></td></tr>
+                    <tr><td>Secondary Email<input type="text" name="email1" id="em1" ></td></tr>
+                    <tr><td>Password<input type="password" name="password" id="pp" ></td></tr>
+                    <tr><td>Re-enter Password<input type="password" name="repassword" id="pp1"></td></tr>
+                    <tr><td>Phone<input type="text" name="ph" id="ph1"></td></tr>
+                    <tr> <td> Upload Picture  <input type="File" name="image"/></td></tr>                  
+                    <tr> <td> <input type="submit" value="SignUp" onclick="return check()"/> </td></tr>
+                </table>
+
+            </div>
+        }
+ 
+         </section>
+
+
+   <!-- Call-To-Action Section
+   ================================================== -->
+ 
+
+
+   <!-- Screenshots
+   ================================================== -->
+   <section id="screenshots">
+       <div class="row section-head">
+       <h1>Register Department</h1>
+           <h6>It's free and always will be. </h6>
+           </div>
+         
+        @using (Html.BeginForm("addDep", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+         {   
+        <table style="margin-left:100px">
+		<tr><td>Department Name<input type="text" name="depname" id="dn"></td></tr>
+        <tr><td>E-mail Address<input type="email" name="depemail" id="de"></td></tr>
+        <tr><td>Secondary E-mail Address<input type="text" name="secemail" id="de1"></td></tr>
+        <tr><td>Phone number<input type="text" name="mobno" id="dp"></td></tr>
+        <tr><td>Place <input type="text" name="place" id="dp1"></td></tr>
+        <tr><td>City <input type="text" name="depcity" id="dc"></td></tr>
+       <tr> <td> Upload Picture  <input type="File" name="image"/></td></tr>   
+		
+        <tr><td><input type="submit" value="Send Request" onclick="return checkDep()"/></td></tr>
+    </table>
+       }
+
+          		</div>  <!-- item end -->
+
+            </div> <!-- portfolio-wrapper end -->
+
+         </div> <!-- twelve columns end -->
+
+      </div>  <!-- end row -->
+
+   </section> <!-- Screenshots End -->
+    
+    </section>
+
+    <section id='comp'>
+        <div style="height:30px"><h2 style="font-weight:normal;font-size:24px;margin:5px 450px;color:#0026ff;"> Complaints & Reviews</h2></div>
+        <div style="padding-top:20px"></div>
+        <div style="padding-left:300px">
+            <div class="six columns center">
+
+
+
+                @foreach (complaint_traking_system.Models.Complaint c in complaints)
+                {
+                    <div style="background-color:#f8f8f8;border-top:2px solid #d5d7d8;padding:10px 29px 20px 23px;margin-top:3px;">
+                        <table style="width:100%">
+                            <tr>
+                                <td hidden><input type="text" id="my" name="my" value="@c.complaint_id" /></td>
+
+                                <td class="complaint" colspan="3">
+                                    <p hidden id="id">@c.complaint_id</p>
+
+                                    <h4> <img src="~/Images/star.gif" alt="qwert" height="20" width="20" />  @Html.ActionLink(@c.subject, "Index", "Home")</h4>
+                                    <hr />
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td class="small" colspan="3">
+
+                                    <a href="/profile-2008622"><div class="profimgcont"> <img src="~/images/iphone.png" alt="" height="40" width="20" /></div></a>&nbsp;<a href="/profile-2008622">@c.Mobile_User.name</a>
+
+                                    on @c.date At @c.date
+
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <table>
+                                        <tr>
+                                            <td class="small"></td>
+                                            <td class="small"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <div style="padding-top:6px;"><p class="test2">@c.detail</p></div>
+                                    <hr />
+                                </td>
+                            </tr>
+                            <tr class="small">
+                                <td style="padding-bottom:5px;">
+                                    <img src="~/images/comments.gif" alt="" style="vertical-align:middle" />
+                                    @Html.ActionLink("Read Comments", "Index", "Home") <span class="small"></span>
+                                </td>
+                                <td> @Html.ActionLink("Show Location", "Index", "Home") <span class="small"></span></td>
+                            </tr>
+                            <tr><td class="under bb" colspan="3"></td></tr>
+                        </table>
+
+                    </div>
+                    <div style="padding-top:25px"></div>
+
+                }
+
+            </div>
+        </div>
+
+    </section>
+
+    
+
+
+
+
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="~/Scripts/jquery.flexslider.js"></script>
+   <script src="~/Scripts/waypoints.js"></script>
+   <script src="~/Scripts/jquery.fittext.js"></script>
+   <script src="~/Scripts/jquery.fitvids.js"></script>
+   <script src="~/Scripts/imagelightbox.js"></script>
+   <script src="~/Scripts/jquery.prettyPhoto.js"></script>   
+   <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>
+
+   </section> <!-- Screenshots End -->
+    
+
+
+   <!-- Testimonials Section
+   ================================================== -->
+
+      <section id="testimonials">
+
+      <div class="row content">
+
+         <span><i class="quote-left fa fa-quote-left"></i></span>
+
+         <div class="text-container">
+
+            <div class="twelve columns">
+
+               <h1>About Us</h1>
+
+            </div>
+
+            <div class="twelve columns flex-container">
+
+               <div class="flexslider">
+                   
+                 
+                        <blockquote>
+                             <img src="~/Images/about us.jpg" alt=""></>
+                           <p>We are here To facilitate User at best level.User Can register Complaints at anytime anywhere </p>
+                             <h3>Bushra Tajammal Bitf11a012</h3>
+                            
+                            <h3>Jannat Azhar     Bitf11a054</h3>
+                           
+                            <h3>Sumreen Kanwal   Bitf11a058</h3>
+                           <cite>C.T.S</cite>
+                        </blockquote>
+                  
+
+               </div> 
+
+            </div> 
+
+         </div>  
+         <span><i class="quote-right fa fa-quote-right"></i></span>
+
+      </div> <!-- row ends -->
+
+   </section> <!-- Testimonials Section End-->
+
+
+   <!-- Subscribe
+   ================================================== -->
+   <section id="subscribe">
+
+     <section id="subscribe">
+        <div class="row section-head">
+
+         <div class="twelve columns">
+             
+
+          <img src="~/Images/contactus.png" alt=" " />
+
+            <p>You can contact us and can give your feed back.Remember! your feed back is much important 
+                for us.so do not feel hesitate and just write down your email address and comment us.</p>
+        
+
+            
+             
+                 <div style="margin-left:50px">
+                     
+             <table style="margin-left:10px">
+                    
+         
+  <tr><td><b>Email or Phone: </b><div style="margin-left:220px"> <input type="email" name="name" value=""  /></div></td></tr>
+
+         <tr><td> <b> Comment: </b><div style="margin-left:220px"><textarea rows="10" cols="40"  placeholder="Write comment"></textarea></div></td></tr>
+    
+
+                         
+                       
+       <tr><td> <input type="submit" name="send" value="Send" /></td></tr>
+
+      
+             </table>
+          </div>
+
+
+            <p><small>We never share your information or use it to spam you.</small></p>
+
+
+
+      
+
+             </div>
+            </div>
+
+
+
+
+
+    </section>
+
+   </section>  <!-- Subscribe Section End-->
+   
+
+
+
+   <!-- Footer
+   ================================================== -->
+  
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="~/Scripts/jquery.flexslider.js"></script>
+   <script src="~/Scripts/waypoints.js"></script>
+   <script src="~/Scripts/jquery.fittext.js"></script>
+   <script src="~/Scripts/jquery.fitvids.js"></script>
+   <script src="~/Scripts/imagelightbox.js"></script>
+   <script src="~/Scripts/jquery.prettyPhoto.js"></script>   
+   <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>

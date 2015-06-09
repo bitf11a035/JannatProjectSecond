@@ -1,0 +1,224 @@
+﻿@using complaint_traking_system;
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    @{
+
+        IEnumerable<complaint_traking_system.Models.User> userss = ViewData["user"] as IEnumerable<complaint_traking_system.Models.User>;
+        IEnumerable<complaint_traking_system.Models.Complaint> adminss = ViewData["complaints"] as IEnumerable<complaint_traking_system.Models.Complaint>;
+}
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>CTS</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="~/Content/default.css">
+	<link rel="stylesheet" href="~/Content/layout.css">
+   <link rel="stylesheet" href="~/Content/media-queries.css">
+   <link rel="stylesheet" href="~/Content/animate.css">
+   <link rel="stylesheet" href="~/Content/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/search.css">
+    <link rel="stylesheet" href="~/Content/circle.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="~/Scripts/modernizr.js"></script>
+     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery.easing.1.2.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery.circulate.js'></script>
+    <script type='text/javascript' src='~/Scripts/example.js'></script>
+    <script type="text/javascript">
+        $('#yourLoadingImage').hide();
+        $('#sm').click(function () {
+            $(this).attr('disabled', 'disabled');
+            $(this).hide();
+            $('#yourLoadingImage').show();
+
+
+            $.ajax({
+                url: "/echo/html/",
+            }).done(function () {
+                $('#sm').attr('disabled', false);
+                $('#sm').show();
+                $('#yourLoadingImage').hide();
+            });
+
+        });
+        </script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" />
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header>
+        
+    
+
+      <nav id="nav-wrap">         
+<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>         
+      @foreach (complaint_traking_system.Models.User u in userss)
+      {
+          <ul id="nav" class="nav">
+   <li><img alt="" src="~/images/White_on_black_background_192x75.png" alt="" width="200" height="50"></li>
+       
+           <li> <div class="HeadersearchBox"><input type="text" value="Search..." class="searchTextBox" id="search" /></div></li>
+              <li><img src="~/Data/@u.photo" alt="" height="40" width="50"/>></li>
+                            <li><a class="smoothscroll" href="#profile">@u.name</a></li>
+           @*  <li> </li>
+             <li>@Html.ActionLink(u.name, "Index","User_Panel" )</li>*@
+            <li>@Html.ActionLink("Home", "Index","User_Panel" )</li>
+             <li>@Html.ActionLink("Complaints", "ComplaintsUser","User_Panel" )></li>
+	         <li>@Html.ActionLink("Search Complaints", "Index","User_Panel" )></li>
+            <li>@Html.ActionLink("About", "Index","Home/Index" )</li>
+                 
+   
+         </ul> <!-- end #nav -->
+      }
+      </nav> <!-- end #nav-wrap -->
+
+      <ul class="header-social">
+       
+    <nav id="nav-wrap">
+	<ul id="nav" class="nav">
+	
+		<li><a href="#"><i class="fa fa-cog"></i></a>
+			<ul>
+				<li><a href="/User_Panel/ViewProfile">View profile</a></li>
+				
+				<li><a href="~/User_Panel/UpdateProfile">Update profile</a></li>
+					
+                <li><a href="~/User_Panel/DeleteProfileUser">Delete profile</a></li>
+                
+                <li><a href="#">Logout</a></li>
+			</ul>
+		</li>
+	
+	</ul>
+</nav>
+      </ul>
+                       
+
+   </header> <!-- Header End -->
+
+    <section id="profile">
+          <div class="row section-head">
+         @foreach (complaint_traking_system.Models.User u in userss)
+         {
+       <div class="six columns center">
+                 <div style="width:410px;height:310px;border:8px inset black;">
+                 <img src="~/Data/@u.photo" alt="qwert" height="300" width="410" text="aaaaaaaaaaaaaaaaa"/>
+                     
+                     
+                @*  <input type='submit' id='sm'>
+    <img id='yourLoadingImage' src='http://www.findstorageusa.com/images/small-loading.gif'/>*@
+                     </div>
+           <p><a>@u.name</a></p>
+          
+                     
+             </div>
+             
+         }
+</div>
+
+
+    </section>
+
+
+
+
+
+
+     <section id='login'>
+
+      <div><h2 style="font-weight:normal;font-size:24px;margin:5px 500px;color:#0c0b0b;"> Complaints & Reviews</h2></div>
+        <div class="six columns center">
+
+<tr><td><div id="c1001963">
+  @foreach (complaint_traking_system.Models.User u in userss)
+      {
+ foreach (complaint_traking_system.Models.Complaint c in adminss)
+ {
+<table style="width:100%">
+	<tr>
+		<td class="complaint" style="padding-top:5px;padding-bottom:2px;" colspan="3">
+			
+			<h4><a href="/User_Panel/PostCommentUser">@c.status</a></h4>
+		</td>
+	</tr>
+	<tr>
+		<td class="small" colspan="3" style="vertical-align:middle;">
+			
+				<a href="/profile-2008622"><div class="profimgcont"> <img src="~/Data/@u.photo" alt="" height="50" width="50"/></div></a>&nbsp;<a href="/profile-2008622">@u.name</a>
+			 
+			on @c.date
+			
+			 
+		</td>
+	</tr>
+	<tr>	
+		<td colspan="3">
+			<table>
+				<tr>
+					<td class="small"></td>
+					<td class="small"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="compl-text" colspan="3" style="padding-bottom:7px;" >
+			<!--div style="margin:5px 0px;"><b></b></div-->
+			<div style="padding-top:6px;">@c.detail</div>
+    </td>
+	</tr>
+	<tr class="small">
+		<td style="padding-bottom:5px;"><img src="~/images/comments.gif" alt="Complaint comments" title="Complaint comments" style="vertical-align:middle"/> <a href="/airtel-regarding-postpaid-connection-deposit-c1001963#comments">Read comments</a> <span class="small"></span></td>
+		
+		<td style="text-align:right"><img src="~/images/category.gif" alt="Complaint category" title="Complaint category" style="vertical-align:middle;"/><span style="vertical-align:middle;"> <a href="/bysubcategory/mobile-service-providers">Mobile Service Providers</a></span></td>
+	</tr>
+	<tr><td class="under bb" colspan="3"></td></tr>
+</table>
+ }
+  } 
+</div>
+    </div>
+         </section>
+
+
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="~/Scripts/jquery.flexslider.js"></script>
+   <script src="~/Scripts/waypoints.js"></script>
+   <script src="~/Scripts/jquery.fittext.js"></script>
+   <script src="~/Scripts/jquery.fitvids.js"></script>
+   <script src="~/Scripts/imagelightbox.js"></script>
+   <script src="~/Scripts/jquery.prettyPhoto.js"></script>   
+   <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>

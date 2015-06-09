@@ -1,0 +1,57 @@
+﻿@model complaint_traking_system.Models.ProductModel
+
+@{
+    ViewBag.Title = "barChart";
+    Layout = null;
+    Layout = "~/Views/Admin_Panel/admin_share.cshtml";
+}
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Create and populate the data table.
+        @*var yea = [@Model.ProductData.DepName];
+       
+        var res = yea.split(",");
+        
+        var years = [];
+    //    fruits.push("Kiwi");
+        for (var i = 0 ; i < res.length; i++) {
+            years.push(res[i].tosting());
+        }*@
+      //  var years = ['Wapda', 'Lessco', 'Pucit', 'Pu', 'Hostel'];
+        var yea = "@Model.ProductData.DepName";
+        var sales = [@Model.ProductData.TotComplain];
+        var Purchase = [@Model.ProductData.SolCompalin];
+        var res = yea.split(",");
+
+        var years = [];
+        //  years.push("ab");
+        //    fruits.push("Kiwi");
+        for (var i = 0 ; i < res.length; i++) {
+            var ab = res[i];
+            var abc = "abc";
+            years.push(ab);
+        }
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '@Model.Department');
+        data.addColumn('number', '@Model.Total_Complaint');
+        data.addColumn('number', '@Model.SolvedComplaint');
+        for (i = 0; i < sales.length; i++) {
+            data.addRow([years[i], sales[i], Purchase[i]]);
+        }
+        var options = {
+            title: 'Total Complaint and Solved Complaint Compare',
+            hAxis: { title: '@Model.Department', titleTextStyle: { color: 'red'} }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+<div   id="chart_div" style="width: 800px; height: 500px; margin-left:100px; margin-top:100px;">
+</div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f69a2c8ddf844427af952cbf6f48cc5e" Name="Diagram1">
+        <EntityTypeShape EntityType="CTSModel.Admin" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Category" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Comment" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Complaint" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Dep" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Department" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Map" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Mobile_User" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Notification" Width="1.5" PointX="10.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.Request" Width="1.5" PointX="10.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTSModel.User" Width="1.5" PointX="8.25" PointY="17.875" IsExpanded="true" />
+        <AssociationConnector Association="CTSModel.FK_Comments_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Notifications_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Category_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Complaints_ToTable_2" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Comments_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Comments_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Comments_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Complaints_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Complaints_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Map_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Notifications_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Notifications_ToTable_3" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Requests_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="CTSModel.FK_Notifications_ToTable_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

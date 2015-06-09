@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <style type="text/css">
+      #button1 {  /* Box in the button */
+        display: ruby;
+        width: auto;
+       padding: 5px 15px;
+       height:auto;
+      }
+
+      #button1 a {
+        text-decoration: none;  /* Remove the underline from the links. */
+      }
+
+      #button1 ul {
+        list-style-type: none;  /* Remove the bullets from the list */
+      }
+
+      #button1 .top {
+        background-color: #DDD;  /* The button background */
+      }
+
+      #button1 ul li.item {
+        display: none;  /* By default, do not display the items (which contains the links) */
+      }  
+
+      #button1 ul:hover .item {  /* When the user hovers over the button (or any of the links) */
+        display: block;
+        border: 1px solid black;
+        background-color: #EDC;
+      }
+      
+    </style>
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>CTS</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="~/Content/default.css">
+	<link rel="stylesheet" href="~/Content/layout.css">
+   <link rel="stylesheet" href="~/Content/media-queries.css">
+   <link rel="stylesheet" href="~/Content/animate.css">
+   <link rel="stylesheet" href="~/Content/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/a.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="~/Scripts/modernizr.js">
+
+	</script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<body>
+
+   <div id="preloader">      
+      <div id="status">
+        @* <img src="~/images/preloader.gif" height="64" width="64" alt="">*@
+      </div>
+   </div>
+
+   <!-- Header
+   ================================================== -->
+   <header>
+
+      @*<div class="logo">
+         <a class="smoothscroll" href="#hero"><img alt="" src="~/images/logo.png"></a>
+      </div>*@
+       <nav id="nav-wrap">
+	<ul id="nav" class="nav">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Tutorials</a>
+			<ul>
+				<li><a href="#">Photoshop</a></li>
+				<li><a href="#">Illustrator</a></li>
+				<li><a href="#">Web Design</a>
+					<ul>
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="#">Articles</a>
+			<ul>
+				<li><a href="#">Web Design</a></li>
+				<li><a href="#">User Experience</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Inspiration</a></li>
+	</ul>
+</nav>
+
+   </header> <!-- Header End -->
+
+    <section id="Forget">
+        
+       <div class="row section-head">
+
+      <form>
+          <h1>Reset Your Password</h1>
+          <h3>How Would You Like To Reset Your Password</h3>
+          </div>
+      
+                <table style="margin-left:800px">
+                    <tr><td><div id="t2"><input type="radio" name="sex" value="Secondary" id="1">Email me on my secondary Email_Address</div><br></td></tr>
+                   
+                    <tr><td><div id="t1"><input type="radio" name="sex" value="OnPhone" id="2">Send me a code on Cell<br></div></td></tr>
+                    </table>
+          <table id=table1 style="margin-left:800px">
+                </table>
+          @*<a href ="~/Home/CodeMessage/"><input type="submit" name="Continue" value="Continue" /></a>
+          <a href= "~/Home/Index"><input type="submit" name="Cancel" value="Cancel" /> </a>*@
+
+         @Scripts.Render("~/bundles/jquery")
+            <script>
+                $(document).ready(function () {
+
+                    $('#1').click(function () {
+                       
+                        $('#email').remove();
+                        $('#table1 tr').remove();
+                        $('#table tr').remove();
+                     
+                        $('#table1').append('<div id="email"><tr><td>@Html.Label("Enter Email :")<input type=text id=email  /><Button id=but>Continue</Button>   <Button id=but2>Cancel</Button><br></td></tr>');
+                    });
+                    $('#2').click(function () {
+                        $('#email').remove();
+                      
+                       
+                        $('#table1 tr').remove();
+                        $('#table tr').remove();
+
+                        $('#table1').append('<div id="email"><tr><td>@Html.Label("Enter Phone number :")<input type=text id=email  /><Button id=but>Continue</Button>   <Button id=but2>Cancel</Button><br></td></tr>');
+                    });
+              
+        });
+                </script>
+
+        </section>
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="~/Scripts/jquery.flexslider.js"></script>
+   <script src="~/Scripts/waypoints.js"></script>
+   <script src="~/Scripts/jquery.fittext.js"></script>
+   <script src="~/Scripts/jquery.fitvids.js"></script>
+   <script src="~/Scripts/imagelightbox.js"></script>
+   <script src="~/Scripts/jquery.prettyPhoto.js"></script>   
+   <script src="~/Scripts/main.js"></script>
+
+</body>
+     @section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    }
+</html>

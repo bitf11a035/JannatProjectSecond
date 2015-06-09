@@ -1,0 +1,160 @@
+﻿@model complaint_traking_system.Models.Request
+
+@{
+    ViewBag.Title = "viewRequest";
+    Layout = null;
+    Layout = "~/Views/Admin_Panel/admin_share.cshtml";
+}
+
+    <section id='post'>
+     
+      
+      <div style="height:30px"></div>
+       
+ 
+	<table id="body" style="margin-left:auto;margin-right:auto;">		
+		
+		<tr>
+			<td class="wml">&nbsp;</td>      
+      <td class="wmm" style="padding:5px 16px 5px 14px;text-align:left;width:886px;">  
+
+
+    <table style="width:100%">
+	
+    @if(Model!=null)
+    {
+	<tr><td style="height:6px" colspan="2"></td></tr>
+	<tr>
+		<td class="small" colspan="2" style="vertical-align:middle;">
+            <a href="#" style ="font-size:30px"> @Model.type</a><br/>
+
+			<h6 style="font-size:13px">@Model.date , @Model.time</h6>
+										    
+		</td>
+	</tr>
+        
+        <tr> <td>
+            <a href="#" style="font-size:25px"> Department Details</a>
+
+         </td>
+        </tr>
+	<tr>	
+		<td colspan="2">
+			<table>
+				<tr>
+					<td class="small"></td>
+					<td class="small"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+        
+	<tr>
+        <tr></tr>
+		<td class="compl-text" colspan="2" style="padding-bottom:15px">
+			<div>Name: &nbsp;&nbsp;&nbsp; @Model.name</div>
+ 
+    </td>	
+	</tr>
+		<tr>
+
+		<td class="compl-text" colspan="2" style="padding-bottom:15px">
+			<div>Email: &nbsp;&nbsp;&nbsp; @Model.email</div>
+ 
+    </td>	
+	</tr>	
+        
+        <tr>
+
+		<td class="compl-text" colspan="2" style="padding-bottom:15px">
+			<div>Secondary email: &nbsp;&nbsp;&nbsp; @Model.secondary_email</div>
+ 
+    </td>	
+	</tr>
+        
+        <tr>
+
+		<td class="compl-text" colspan="2" style="padding-bottom:15px">
+			<div>Phone: &nbsp;&nbsp;&nbsp; @Model.phone</div>
+ 
+    </td>	
+	</tr>
+        
+        <tr>
+
+		<td class="compl-text" colspan="2" style="padding-bottom:15px">
+			<div>Place: &nbsp;&nbsp;&nbsp; @Model.place</div>
+ 
+    </td>	
+	</tr>
+        
+        <tr>
+
+		<td class="compl-text" colspan="2" style="padding-bottom:15px">
+			<div>City: &nbsp;&nbsp;&nbsp; @Model.city</div>
+ 
+    </td>	
+	</tr>
+        
+        
+		<tr><td>
+            		<div class="resolved-text">
+					<h5>Request Status</h5><br/>
+					<div style="padding-top:5px;"><span></span> @Model.status ...</div>
+				</div>
+			
+			
+			<b></b>
+		</td>
+
+	</tr>
+	<tr>
+
+		<td class="small" style="padding:8px 0px 0 0;border-top:1px solid #E2E3E1;white-space:nowrap;">
+			
+		</td>
+		<td class="small" style="padding:5px 0px 4px 0px;border-top:1px solid #E2E3E1;">
+		    <table style="float:right;margin-top:1px;"><tr>
+			<td style="width:250px;padding-top:0px;color:#ef1c23">
+				
+				<img src="~/images/check-green.png" />
+				
+				<a href="@Url.Action("approve", "Admin_Panel",new {request_id= Model.request_id})" >Approve this Request</a>
+				
+			</td>
+		    </tr>
+            </table>
+		</td>
+	</tr>
+
+    <tr>
+
+        <td class="small" style="padding:8px 0px 0 0;border-top:1px solid #E2E3E1;white-space:nowrap;"></td>
+        <td class="small" style="padding:5px 0px 4px 0px;border-top:1px solid #E2E3E1;">
+            <table style="float:right;margin-top:1px;">
+                <tr>
+                    <td style="width:250px;padding-top:0px;color:#ef1c23">
+
+                        <img src="~/images/check-red.png" />
+
+                        <a href="@Url.Action("discard", "Admin_Panel",new {request_id= Model.request_id})">Discard this Request</a>
+
+                    </td>
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+	<tr>
+		<td colspan="2" class="goog-border" style="border-top:1px solid #E2E3E1"></td>
+	</tr>
+	
+    }
+
+ </table>
+ </table>
+
+<div id="layers"></div>
+
+</section>

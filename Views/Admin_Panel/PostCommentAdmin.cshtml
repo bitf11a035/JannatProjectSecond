@@ -1,0 +1,363 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+
+
+    @{
+
+
+        IEnumerable<complaint_traking_system.Models.Comment> Comments = ViewData["Comments"] as IEnumerable<complaint_traking_system.Models.Comment>;
+        IEnumerable<complaint_traking_system.Models.Admin> userss = ViewData["user"] as IEnumerable<complaint_traking_system.Models.Admin>;
+        IEnumerable<complaint_traking_system.Models.Complaint> complaints = ViewData["complaint"] as IEnumerable<complaint_traking_system.Models.Complaint>;
+        IEnumerable<complaint_traking_system.Models.Mobile_User> Commented_Users = ViewData["Mobile_User"] as IEnumerable<complaint_traking_system.Models.Mobile_User>;
+    // IEnumerable<complaint_traking_system.Models.User> Comment_Users = ViewData["WebUser"] as IEnumerable<complaint_traking_system.Models.User>;
+    //IEnumerable<complaint_traking_system.Models.Admin> Comment_Admin = ViewData["WebAdmin"] as IEnumerable<complaint_traking_system.Models.Admin>;
+    //IEnumerable<complaint_traking_system.Models.Department> Comment_Dep = ViewData["WebDep"] as IEnumerable<complaint_traking_system.Models.Department>;
+
+    }
+    <!--- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>CTS</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Content/default.css">
+    <link rel="stylesheet" href="~/Content/layout.css">
+    <link rel="stylesheet" href="~/Content/media-queries.css">
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link rel="stylesheet" href="~/Content/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/search.css">
+    <link rel="stylesheet" href="~/Content/circle.css">
+    <style>
+        h2 {
+            text-shadow: 3px 3px #808080;
+        }
+    </style>
+
+    <!-- Script
+    ================================================== -->
+    <script src="~/Scripts/modernizr.js"></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery.easing.1.2.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery.circulate.js'></script>
+    <script type='text/javascript' src='~/Scripts/example.js'></script>
+    <script type="text/javascript">
+        $('#yourLoadingImage').hide();
+        $('#sm').click(function () {
+            $(this).attr('disabled', 'disabled');
+            $(this).hide();
+            $('#yourLoadingImage').show();
+
+
+            $.ajax({
+                url: "/echo/html/",
+            }).done(function () {
+                $('#sm').attr('disabled', false);
+                $('#sm').show();
+                $('#yourLoadingImage').hide();
+            });
+
+        });
+    </script>
+
+    <!-- Favicons
+     ================================================== -->
+    <link rel="shortcut icon" href="favicon.png" />
+</head>
+
+<body>
+
+    <!-- Header
+    ================================================== -->
+    <header>
+
+
+
+        <nav id="nav-wrap">
+            <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+            <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+
+            <ul id="nav" class="nav">
+                <li><img alt="" src="~/images/White_on_black_background_192x75.png" alt="" width="200" height="50"></li>
+
+
+                <li><a href="/Admin_Panel/Index_Admin">Home</a></li>
+                <li>@Html.ActionLink("Chart", "barChart", "Admin_Panel")</li>
+
+                <li>@Html.ActionLink("Logout", "Index", "Home")</li>
+
+
+
+            </ul> <!-- end #nav -->
+
+        </nav> <!-- end #nav-wrap -->
+
+        <ul class="header-social">
+
+            <nav id="nav-wrap">
+                <ul id="nav" class="nav">
+
+                    <li>
+                        <a href="#"><i class="fa fa-cog"></i></a>
+                        <ul>
+
+
+                            <li><a href="/Admin_Panel/UpdateProfileAdmin">Update profile</a></li>
+
+
+
+                            <li><a href="/Home/Index">Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </ul>
+
+
+    </header> <!-- Header End -->
+
+
+    <section id='post'>
+        <div style="height:30px"><h2 style="font-weight:normal;font-size:34px;margin:5px 500px;color:#000000;"> Complaint</h2></div>
+        @foreach (complaint_traking_system.Models.Admin u in userss)
+        {
+            foreach (complaint_traking_system.Models.Complaint c in complaints)
+            {
+                foreach (complaint_traking_system.Models.Mobile_User mob in Commented_Users)
+                {
+
+
+                    <div style="height:30px"></div>
+
+
+                    <table id="body" style="margin-left:auto;margin-right:auto;">
+
+                        <tr>
+                            <td class="wml">&nbsp;</td>
+                            <td class="wmm" style="padding:5px 16px 5px 14px;text-align:left;width:886px;">
+
+
+                                <table style="width:100%">
+
+
+                                    <tr><td style="height:6px" colspan="2"></td></tr>
+
+                                    <tr>
+                                        <td class="small" colspan="2" style="vertical-align:middle;">
+                                            <div style="background-color:#f8f8f8;border-top:2px solid #d5d7d8;padding:10px 29px 20px 23px;margin-top:3px;">
+                                                <div class="profimgcont"><img src="~/images/blank_profile.jpg" style="width:20px;height:20px;" alt="User"></div>
+                                                <div style="font-size:14px;color:#0026ff;">	 @mob.name &nbsp;&nbsp;Posted   on&nbsp; @c.date &nbsp; At  @c.time</div>
+
+
+                                                <hr />
+
+                                                <div> @c.detail</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table>
+                                                <tr>
+                                                    <td class="small"></td>
+                                                    <td class="small"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr></tr>
+                                    <tr>
+
+                                        <td class="compl-text" colspan="2" style="padding-bottom:15px">
+
+
+
+                                            <div class="resolved-text">
+                                                <h4>Complaint Status</h4><br />
+                                                <div style="padding-top:5px;"><span>@c.status</span> </div>
+                                            </div>
+
+
+                                            <b></b>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td class="small" style="padding:8px 0px 0 0;border-top:1px solid #E2E3E1;white-space:nowrap;">
+                                            <img src="~/images/comments.gif"
+                                                 style="width:15px;height:14px;vertical-align:middle;" title="Complaint comments" alt="Complaint comments">
+                                            <a href="/airtel-worst-company-c1001510#comment">@Comments.Count() Comments</a>
+                                        </td>
+                                        <td class="small" style="padding:5px 0px 4px 0px;border-top:1px solid #E2E3E1;">
+                                            <table style="float:right;margin-top:1px;">
+                                                <tr>
+                                                    <td style="width:250px;padding-top:0px;color:#ef1c23">
+
+                                                        <img src="~/images/check-green.png" />
+                                                        <a href="#">@c.status</a>
+                                                        &nbsp;
+                                                        <img src="~/images/question-gray.png" style="vertical-align:top;" onmouseover="jQuery('.cellspelltlt_subject').show();" onmouseout="jQuery('.cellspelltlt_subject').hide();" />
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2" class="goog-border" style="border-top:1px solid #E2E3E1"></td>
+                                    </tr>
+                                </table>
+
+                                <h4 style="padding:15px 0 10px 0">Comments</h4>
+
+                                @foreach (complaint_traking_system.Models.Comment comm in Comments)
+                                {
+                                    if (comm.Admin != null)
+                                    {
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td>
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                            <td class="comments" style="padding:6px;">
+                                                                <div style="float:left;min-height:24px;">
+                                                                    <div class="profimgcont"><img src="~/Data/@comm.Admin.photo" style="width:20px;height:25px" alt="User"> </div>
+                                                                    <div style="font-size:14px;color:#0026ff;">@comm.Admin.name &nbsp;&nbsp;At &nbsp;@comm.date&nbsp;@comm.time</div>
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="compl-text">
+                                                                <div style="padding:15px 10px 5px 10px;">
+                                                                    @comm.text
+                                                                </div>
+                                                                <hr />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr><td style="text-align:center"><div class="pagelinks" style="padding-top:15px;"></div></td></tr>
+                                        </table>
+                                    }
+
+                                    if (comm.User != null)
+                                    {
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td>
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                            <td class="comments" style="padding:6px;">
+                                                                <div style="float:left;min-height:24px;">
+                                                                    <div class="profimgcont"><img src="~/Data/@comm.User.photo" style="width:20px;height:25px" alt="User"> </div>
+                                                                    <div style="font-size:14px;color:#0026ff;">@comm.User.name &nbsp;&nbsp;At &nbsp;@comm.date&nbsp;@comm.time</div>
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="compl-text">
+                                                                <div style="padding:15px 10px 5px 10px;">
+                                                                    @comm.text
+                                                                </div>
+                                                                <hr />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr><td style="text-align:center"><div class="pagelinks" style="padding-top:15px;"></div></td></tr>
+                                        </table>
+                                    }
+
+                                    if (comm.Department != null)
+                                    {
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td>
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                            <td class="comments" style="padding:6px;">
+                                                                <div style="float:left;min-height:24px;">
+                                                                    <div class="profimgcont"><img src="~/Data/@comm.Department.photo" style="width:20px;height:25px" alt="User"> </div>
+                                                                    <div style="font-size:14px;color:#0026ff;">@comm.Department.name &nbsp;&nbsp;At &nbsp;@comm.date&nbsp;@comm.time</div>
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="compl-text">
+                                                                <div style="padding:15px 10px 5px 10px;">
+                                                                    @comm.text
+                                                                </div>
+                                                                <hr />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr><td style="text-align:center"><div class="pagelinks" style="padding-top:15px;"></div></td></tr>
+                                        </table>
+                                    }
+
+                                }
+
+                                <a id="addcomment"></a>
+                                <h4 id="postHead">Post your Comment</h4>
+
+
+                                @using (Html.BeginForm("PostComment", "Admin_Panel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <textarea hidden name="id" id="id">@c.complaint_id</textarea>
+                                    <textarea hidden name="id1" id="id1">@u.admin_id</textarea>
+                                    <div style=" border-top: 2px solid #d5d7d8; padding: 10px 29px 20px 23px; margin-top: 3px;">
+                                        <div class="txtareawrap form" style="padding: 10px 0 7px 0">
+
+                                            <textarea name="text" id="text" style="width: 100%; height: 190px; border: 1px solid #cccccc; border-top: 1px solid #9a9a9a; padding: 5px;"
+                                                      placeholder="Post your comment here.."></textarea>
+                                        </div>
+                                    </div>
+                                    <div style="text-align:center;padding:20px;"><button id="butt"> Post Comment </button></div>
+                                    <br /><br /><br /><br />
+                                }
+
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                    <div id="layers"></div>
+
+                }
+            }
+        }
+
+    </section>
+</body>
+</html>

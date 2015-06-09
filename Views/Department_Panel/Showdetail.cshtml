@@ -1,0 +1,73 @@
+﻿@model complaint_traking_system.Models.Complaint
+
+@{
+    Layout = null;
+    Layout = "~/Views/Department_Panel/dep_share.cshtml";
+}
+
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Showdetail</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+   
+   <script type="text/javascript">
+       function init_map(map_canvas_id, lat, lng, zoomLevel) {
+           var markers =
+   [
+      {
+          title: "@Model.subject",
+          position: new google.maps.LatLng(lat, lng)
+      },
+      
+   ];
+           var myLatLng = new google.maps.LatLng(lat, lng);
+
+           var options = {
+               zoom: zoomLevel,
+               center: myLatLng,
+               //    mapTypeId: google.maps.MapTypeId.HYBRID
+           };
+
+           var map_canvas = document.getElementById(map_canvas_id);
+
+           var map = new google.maps.Map(map_canvas, options);
+           for (var i = 0; i < markers.length; i++) {
+               var marker = new google.maps.Marker(markers[i]);
+               marker.setMap(map);
+           }
+       }
+   </script>
+</head>
+<body>
+    <div style="position:relative;width:1000px;" ></div>
+    <div style=" width:300px;" >
+        <br /><br />
+
+        <a href="#" style="font-size:25px"> Complaint Details</a>
+        <table>
+            <tr><td>Subject</td><td>@Model.subject</td></tr>
+                <tr><td>Detail</td><td>@Model.detail</td></tr>
+            <tr><td>Status</td><td>@Model.status</td></tr>
+            
+            <tr><td>Date</td><td>@Model.date</td></tr>
+            <tr><td>Time</td><td>@Model.time</td></tr>
+            <tr><td id="Text1l">Latitude</td><td>@Model.lat</td></tr>
+            <tr><td id="Text2l">Longitude</td><td>@Model.longitude</td></tr>
+        </table>
+    </div  >
+ 
+
+        <div id="my_map" style="width:850px;height:600px"></div>
+    <script type="text/javascript">
+        lol = document.getElementById('Text1l').value;
+        lol = document.getElementById('Text2l').value;
+
+
+        var ab = '@Model.lat ';
+        var abc = '@Model.longitude';
+
+        
+
+        init_map('my_map', ab, abc, 17);
+   </script>

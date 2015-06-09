@@ -1,0 +1,186 @@
+﻿@using complaint_traking_system;
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+       @{
+
+        IEnumerable<complaint_traking_system.Models.Admin> userss = ViewData["depp"] as IEnumerable<complaint_traking_system.Models.Admin>;
+     
+}
+   <meta charset="utf-8">
+	<title>CTS</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="~/Content/default.css">
+	<link rel="stylesheet" href="~/Content/layout.css">
+   <link rel="stylesheet" href="~/Content/media-queries.css">
+   <link rel="stylesheet" href="~/Content/animate.css">
+   <link rel="stylesheet" href="~/Content/prettyPhoto.css">
+    <link rel="stylesheet" href="~/Content/bush.css">
+    <link rel="stylesheet" href="~/Content/search.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="~/Scripts/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+    <style>
+      
+#About { background-color: #808080; }
+        #new {
+            background-color: #b6ff00;
+        }
+       
+             #butt {  /* Box in the button */
+                    
+       background-color: #808080;
+      }
+    </style>
+</head>
+
+<body>
+      @foreach (complaint_traking_system.Models.Admin u in userss)
+      {
+   <!-- Header
+   ================================================== -->
+   <header>
+<nav id="nav-wrap">         
+         
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>         
+      
+         <ul id="nav" class="nav">
+            <li><img alt="" src="~/images/White_on_black_background_192x75.png" alt="" width="200" height="50"></li>
+             
+             <li> <img src="~/Data/@u.photo" alt="" height="30" width="30"/></li>
+             <li>@Html.ActionLink(u.name, "ViewProfile","Department_Panel" ) </li>
+            <li>@Html.ActionLink("Home", "Index_Admin","Admin_Panel" )</li>
+      
+              <li>@Html.ActionLink("Charts", "barChart","Admin_Panel" )></li>
+
+   
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <ul class="header-social">
+
+                 <nav id="nav-wrap">
+	<ul id="nav" class="nav">
+	
+		<li><a href="#"><i class="fa fa-cog"></i></a>
+			<ul>
+				
+						<li><a href="/Admin_Panel/UpdateProfile">Update_profile</a></li>
+					
+                    <li><a href="/Home/Index">Logout</a></li>
+			</ul>
+		</li>
+	
+	</ul>
+</nav>
+      </ul>
+
+   </header> <!-- Header End -->
+
+   <section id='login'>
+     <div class="row feature design">
+        <h1>@u.name</h1>
+
+         <div class="six columns feature-media left">
+            
+             <img src="~/Data/@u.photo" alt="" height="300" width="700"/>
+             
+             <input type="file" id="photo" name="photo">
+              
+         </div>
+
+      </div>
+            <div class="row feature design" id="About" >
+         <h2 id="new">About</h2>
+              
+         </div>
+          <div class="row feature video">
+              
+      
+       <div align="center">
+           <form action="/Admin_Panel/Update_Ad">
+         <table>
+        <tr>
+                    <td><h2>Your Name is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="name" name="name" value="@u.name" /></td>
+           
+            </tr>
+             <tr>
+                    <td><h2>Your email is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="email" name="email" value="@u.email" /></td>
+           
+            </tr>
+                <tr>
+                    <td><h2>Your Phone No is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="phone" name="phone" value="@u.phone" /></td>
+           
+            </tr>
+             <tr>
+                    <td><h2>Your Secondary Email is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="secondary_email" name="secondary_email" value="@u.secondary_email" /></td>
+           
+            </tr>
+             <tr>
+                    <td><h2>Your Password is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="passowrd" name="passowrd" value="@u.passowrd" /></td>
+           
+            </tr>
+              <tr>
+                    <td><h2>Your City is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="city" name="city" value="@u.city" /></td>
+           
+            </tr>
+              <tr>
+                    <td><h2>Your House is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td><td><input type="text" id="houseNo" name="houseNo" value="@u.houseNo" /></td>
+           
+            </tr>
+
+             <tr>
+                 <td><h2>Your Street is:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></td>
+                 <td><input type="text" id="street" name="street" value="@u.street" /></td>
+
+             </tr>
+
+             <tr><td><input type="submit" value="Update"  /></td></tr>
+             </table>
+           <
+    </div>
+          
+  </div>
+
+
+
+   </section> <!-- Homepage Hero end -->
+
+      }
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="~/Scripts/jquery.flexslider.js"></script>
+   <script src="~/Scripts/waypoints.js"></script>
+   <script src="~/Scripts/jquery.fittext.js"></script>
+   <script src="~/Scripts/jquery.fitvids.js"></script>
+   <script src="~/Scripts/imagelightbox.js"></script>
+   <script src="~/Scripts/jquery.prettyPhoto.js"></script>   
+   <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>

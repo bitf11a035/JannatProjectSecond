@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+@media screen and (min-width: 1920px) and (max-width: 1950px) {	}
+@media screen and (min-width: 1856px) and (max-width: 1920px) {	}
+@media screen and (min-width: 1792px) and (max-width: 1856px) {
+}
+@media screen and (min-width: 1680px) and (max-width: 1792px) {
+}
+@media screen and (min-width: 1600px) and (max-width: 1680px) {
+}
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+	.gr_btn{width:100% !important; margin:5px 0px;}
+}
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	.gr_btn{width:100% !important; margin:5px 0px;}
+}
+@media screen and (min-width: 800px) and (max-width: 1022px) {
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+}
+@media screen and (min-width: 800px) and (max-width: 855px) {
+	.header{height:110px;}
+	.DataFielContainer_M{width:48%;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+}
+@media screen and (min-width: 768px) and (max-width: 800px) {
+	.header{height:110px;}
+	.DataFielContainer_M{width:48%;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none;}
+	.GroupRightsRight{float:none;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+}
+@media screen and (min-width: 640px) and (max-width: 768px) {
+	.header{height:110px;}
+	.top_nav_btn{ display:none;}
+	.MainBody{margin:0px;}
+	.DataFielContainer_M{width:48%;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+}
+@media screen and (min-width: 600px) and (max-width: 640px) {
+	.header{height:110px;}
+	.top_nav_btn{ display:none;}
+	.MainBody{margin:0px;}
+	.DataFielContainer_M{width:48%;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+	.DataFielContainer_S{width:100%;}
+	.DataFielContainer_S input{width:96% !important;}
+}
+@media screen and (min-width: 533px) and (max-width: 600px) {
+	.header{height:200px;}
+	.logoBox{float:none; text-align:center; margin:0px; padding:6px 0px;}
+	.top_nav_btn{ display:none;}
+	.HeadersearchBox{float:none; margin:10px 0px; text-align:center;}
+	.header_action_icon{float:none; margin:0px; text-align:center;}
+	.dateTime{float:none;width:228px;margin: 10px auto;}
+	.searchTextBox{width: 45%;}
+	.user_img{width:45px;}
+	.MainBody{margin:0px;}
+	.DataFielContainer_M{width:48%;}
+	.gr_btn{width:100% !important; margin:5px 0px;}	
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+	.DataFielContainer_S{width:100%;}
+	.DataFielContainer_S input{width:96% !important;}
+	.DataFielContainer_L{width:100%;}
+}
+@media screen and (min-width: 360px) and (max-width: 533px) {
+	.header{height:200px;}
+	.logoBox{float:none; text-align:center; margin:0px; padding:6px 0px;}
+	.top_nav_btn{ display:none;}
+	.HeadersearchBox{float:none; margin:10px 0px; text-align:center;}
+	.header_action_icon{float:none; margin:0px; text-align:center;}
+	.dateTime{float:none;width:223px;margin: 10px auto;}
+	.searchTextBox{width: 45%;}
+	.user_img{width:45px;}
+	.MainBody{margin:0px;}
+	.DataFielContainer_M{width:100%;}
+	.DataFieldContainerLeft{ display: table-row; text-align:left; height:25px;}
+	.DataFieldContainerLeftmTop{ display: table-row; text-align:left; height:25px;}
+	.DataFieldContainerRight{ display:block;}
+	.DataFieldContainerRight input{width:95% !important;}
+	.DataFieldContainerRight select{width:99% !important;}
+	.DataFieldContainerRight textarea{width:95% !important;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+	.DataFielContainer_S{width:100%;}
+	.DataFielContainer_S input{width:96% !important;}
+	.DataFielContainer_L{width:100%;}
+}
+@media screen and (min-width: 320px) and (max-width: 360px) {
+	.header{height:200px;}
+	.logoBox{float:none; text-align:center; margin:0px; padding:6px 0px;}
+	.top_nav_btn{ display:none;}
+	.HeadersearchBox{float:none; margin:10px 0px; text-align:center;}
+	.header_action_icon{float:none; margin:0px; text-align:center;}
+	.dateTime{float:none;width:223px;margin: 10px auto;}
+	.searchTextBox{width: 45%;}
+	.user_img{width:45px;}
+	.MainBody{margin:0px;}
+	.DataFielContainer_M{width:100%;}
+	.DataFieldContainerLeft{ display: table-row; text-align:left; height:25px;}
+	.DataFieldContainerLeftmTop{ display: table-row; text-align:left; height:25px;}
+	.DataFieldContainerRight{ display:block;}
+	.DataFieldContainerRight input{width:95% !important;}
+	.DataFieldContainerRight select{width:99% !important;}
+	.DataFieldContainerRight textarea{width:95% !important;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+	.DataFielContainer_S{width:100%;}
+	.DataFielContainer_S input{width:96% !important;}
+	.DataFielContainer_L{width:100%;}
+}
+@media screen and (min-width: 240px) and (max-width: 320px) {
+	.header{height:200px;}
+	.logoBox{float:none; text-align:center; margin:0px; padding:6px 0px;}
+	.top_nav_btn{ display:none;}
+	.HeadersearchBox{float:none; margin:10px 0px; text-align:center;}
+	.header_action_icon{float:none; margin:0px; text-align:center;}
+	.dateTime{float:none;width:223px;margin: 10px auto;}
+	.searchTextBox{width: 45%;}
+	.user_img{width:45px;}
+	.MainBody{margin:0px;}	
+	.DataFielContainer_M{width:100%;}
+	.DataFieldContainerLeft{ display: table-row; text-align:left; height:25px;}
+	.DataFieldContainerLeftmTop{ display: table-row; text-align:left; height:25px;}
+	.DataFieldContainerRight{ display:block;}
+	.DataFieldContainerRight input{width:95% !important;}
+	.DataFieldContainerRight select{width:99% !important;}
+	.DataFieldContainerRight textarea{width:95% !important;}
+	.gr_btn{width:100% !important; margin:5px 0px;}
+	.GroupRightsLeft{float:none; width:96%;}
+	.GroupRightsRight{float:none; width:96%;}
+	.DataFielContainer_S{width:100%;}
+	.DataFielContainer_S input{width:96% !important;}
+	.DataFielContainer_L{width:100%;}
+}
